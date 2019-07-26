@@ -105,7 +105,7 @@ func main() {
 			cols = append(cols, column{
 				Name: name,
 				Orig: c.Name,
-				Type: c.Type,
+				Type: convertType(c.Type),
 			})
 		}
 		data := tplData{
@@ -124,4 +124,16 @@ func main() {
 
 func fatalf(format string, v ...interface{}) {
 	log.Fatal(fmt.Sprintf(format, v...))
+}
+
+func convertType(t string) string {
+	switch t {
+	case "types.Decimal":
+		return "float64"
+	case "null.int":
+		return "*int"
+	case "null.string":
+		return "*string"
+	}
+	return t
 }
