@@ -43,6 +43,8 @@ github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0/go.mod h1:8NvIoxWQoOIhqOTXgf
 github.com/grpc-ecosystem/grpc-gateway v1.9.0/go.mod h1:vNeuVxBJEsws4ogUvrchl83t/GYV9WGTSLVdBhOQFDY=
 github.com/hashicorp/hcl v1.0.0 h1:0Anlzjpi4vEasTeNFn2mLJgTSwt0+6sfsiTG8qcWGx4=
 github.com/hashicorp/hcl v1.0.0/go.mod h1:E5yfLk+7swimpb2L/Alb/PJmXilQ/rhwaUYs4T20WEQ=
+github.com/huandu/go-sqlbuilder v1.4.1 h1:DYGFGLbOUXhtQ2kwO1uyDIPJbsztmVWdPPDyxi0EJGw=
+github.com/huandu/go-sqlbuilder v1.4.1/go.mod h1:mYfGcZTUS6yJsahUQ3imkYSkGGT3A+owd54+79kkW+U=
 github.com/hyperjiang/php v0.2.0 h1:+2unaJEptrLYxCJ31XCtiEu4msAl39QYOjh8HGfIx/w=
 github.com/hyperjiang/php v0.2.0/go.mod h1:pgx6Ha+1wD4bADLYWrVhAZw7c9P7OPAMExRVkWgeNF4=
 github.com/jonboulle/clockwork v0.1.0/go.mod h1:Ii8DK3G1RaLaWxj9trq07+26W01tbo22gdxWY5EU2bo=

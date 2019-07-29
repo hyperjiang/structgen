@@ -1,8 +1,6 @@
 package {{.Package}}
 
 import (
-	"fmt"
-	"strings"
 	"time"
 
 	"github.com/huandu/go-sqlbuilder"

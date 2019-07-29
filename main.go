@@ -127,13 +127,9 @@ func fatalf(format string, v ...interface{}) {
 }
 
 func convertType(t string) string {
-	switch t {
-	case "types.Decimal":
-		return "float64"
-	case "null.int":
-		return "*int"
-	case "null.string":
-		return "*string"
+	r := viper.GetString("type." + t)
+	if r == "" {
+		r = t
 	}
-	return t
+	return r
 }

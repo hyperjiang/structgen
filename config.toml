@@ -6,8 +6,30 @@
   pass    = ""
   sslmode = "false"
   blacklist = ["schema_migrations"]
-  whitelist = ["user"]
+  whitelist = ["mytable"]
 
 [go]
-  package = "mypackage"
+  package = "legacy"
   output  = "stdout"
+
+[type]
+  "types.Decimal"     = "float64"
+  "types.JSON"        = "string"
+  "types.NullDecimal" = "*float64"
+  "null.String"       = "*string"
+  "null.Float32"      = "*float32"
+  "null.Float64"      = "*float64"
+  "null.Int"          = "*int"
+  "null.Int8"         = "*int8"
+  "null.Int16"        = "*int16"
+  "null.Int32"        = "*int32"
+  "null.Int64"        = "*int64"
+  "null.Uint"         = "*uint"
+  "null.Uint8"        = "*uint8"
+  "null.Uint16"       = "*uint16"
+  "null.Uint32"       = "*uint32"
+  "null.Uint64"       = "*uint64"
+  "null.Bool"         = "*bool"
+  "null.Time"         = "*time.Time"
+  "null.Bytes"        = "*string"
+  "null.JSON"         = "*string"
