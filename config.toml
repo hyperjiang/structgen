@@ -11,7 +11,7 @@
 [go]
   package = "mypackage"
   output  = "stdout"
-  imports  = ["time"]
+  imports  = ["database/sql", "time", "github.com/jmoiron/sqlx"]
 
 [type]
   "types.Decimal"     = "float64"

@@ -20,6 +20,7 @@ type column struct {
 	Name string
 	Orig string
 	Type string
+	Tags string
 }
 
 type tplData struct {
@@ -29,6 +30,7 @@ type tplData struct {
 	InstanceName string
 	StructName   string
 	TableName    string
+	PrimaryKey   string
 	Columns      []column
 }
 
@@ -96,10 +98,12 @@ func main() {
 
 		var cols []column
 		for _, c := range table.Columns {
-			// replace auto increment primary as ID
+			// replace auto increment primary as ID, and remove update tag from it
 			var name string
+			var updateTag = "fieldtag:\"update\""
 			if pkey != "" && c.Default == "auto_increment" {
 				name = "ID"
+				updateTag = ""
 			} else {
 				name = strmangle.TitleCase(c.Name)
 			}
@@ -107,6 +111,7 @@ func main() {
 				Name: name,
 				Orig: c.Name,
 				Type: convertType(c.Type),
+				Tags: updateTag,
 			})
 		}
 		data := tplData{
@@ -116,6 +121,7 @@ func main() {
 			InstanceName: instanceName,
 			StructName:   instanceName + "Struct",
 			TableName:    table.Name,
+			PrimaryKey:   pkey,
 			Columns:      cols,
 		}
 		if err := tpl.Execute(output, data); err != nil {
