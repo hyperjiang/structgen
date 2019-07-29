@@ -24,6 +24,7 @@ type column struct {
 
 type tplData struct {
 	Package      string
+	Imports      []string
 	ModelName    string
 	InstanceName string
 	StructName   string
@@ -110,6 +111,7 @@ func main() {
 		}
 		data := tplData{
 			Package:      viper.GetString("go.package"),
+			Imports:      viper.GetStringSlice("go.imports"),
 			ModelName:    modelName,
 			InstanceName: instanceName,
 			StructName:   instanceName + "Struct",

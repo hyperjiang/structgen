@@ -1,8 +1,8 @@
 package {{.Package}}
 
 import (
-	"time"
-
+{{range $link := .Imports}}	"{{$link}}"
+{{end}}
 	"github.com/huandu/go-sqlbuilder"
 )
 

@@ -9,8 +9,9 @@
   whitelist = ["mytable"]
 
 [go]
-  package = "legacy"
+  package = "mypackage"
   output  = "stdout"
+  imports  = ["time"]
 
 [type]
   "types.Decimal"     = "float64"
