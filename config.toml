@@ -9,8 +9,8 @@
   whitelist = ["mytable"]
 
 [go]
-  package = "legacy"
-  output  = ""
+  package = "mypackage"
+  output  = "stdout"
   imports = ["database/sql", "time", "github.com/jmoiron/sqlx"]
 
 [type]

@@ -64,7 +64,7 @@ func main() {
 		"user":      viper.GetString("mysql.user"),
 		"pass":      viper.GetString("mysql.pass"),
 		"host":      viper.GetString("mysql.host"),
-		"port":      viper.GetString("mysql.port"),
+		"port":      viper.GetInt("mysql.port"),
 		"dbname":    viper.GetString("mysql.dbname"),
 		"sslmode":   viper.GetString("mysql.sslmode"),
 	}
