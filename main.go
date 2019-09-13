@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"path"
 	"text/template"
 
 	"github.com/hyperjiang/php"
@@ -78,11 +79,8 @@ func main() {
 		modelName := strmangle.TitleCase(strmangle.Singular(table.Name))
 		instanceName := php.Lcfirst(modelName)
 		if output == nil {
-			path := viper.GetString("go.output")
-			if path == "" {
-				path = "./" + modelName + ".go"
-			}
-			f, err := os.Create(path)
+			file := path.Join(viper.GetString("go.output"), modelName+".go")
+			f, err := os.Create(file)
 			if err != nil {
 				fatalf("Fail to open output file: %v", err)
 			}
