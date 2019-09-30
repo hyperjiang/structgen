@@ -11,14 +11,14 @@
 [go]
   package = "mypackage"
   output  = "stdout"
-  imports = ["database/sql", "time", "github.com/jmoiron/sqlx"]
+  imports = ["database/sql", "time", "github.com/jmoiron/sqlx", "github.com/go-sql-driver/mysql"]
 
 [type]
   "types.Decimal"     = "float64"
   "types.JSON"        = "string"
   "types.NullDecimal" = "sql.NullFloat64"
   "null.String"       = "sql.NullString"
-  "null.Float32"      = "sql.NullFloat32"
+  "null.Float32"      = "sql.NullFloat64"
   "null.Float64"      = "sql.NullFloat64"
   "null.Int"          = "sql.NullInt32"
   "null.Int8"         = "sql.NullInt32"
@@ -31,6 +31,6 @@
   "null.Uint32"       = "sql.NullInt32"
   "null.Uint64"       = "sql.NullInt64"
   "null.Bool"         = "sql.NullBool"
-  "null.Time"         = "sql.NullTime"
+  "null.Time"         = "mysql.NullTime"
   "null.Bytes"        = "sql.NullString"
   "null.JSON"         = "sql.NullString"

@@ -27,6 +27,13 @@ func ({{.InstanceName}} *{{.ModelName}}) TableName() string {
 	return "{{.TableName}}"
 }
 
+// Columns returns the columns
+func ({{.InstanceName}} *{{.ModelName}}) Columns() []string {
+	return []string{
+{{range $column := .Columns}}		"{{$column.Orig}}",
+{{end}}	}
+}
+
 // SelectBuilder returns a select builder
 func ({{.InstanceName}} *{{.ModelName}}) SelectBuilder() *sqlbuilder.SelectBuilder {
 	return {{.ModelName}}Struct().SelectFrom({{.InstanceName}}.TableName())
